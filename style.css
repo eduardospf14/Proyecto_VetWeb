@@ -1,0 +1,961 @@
+/* --- 1. VARIABLES Y CONFIGURACIÓN --- */
+:root {
+    --verde-principal: #76B041;
+    --verde-oscuro: #5a8a30;
+    --morado-principal: #9B72AA;
+    --morado-oscuro: #7a5a8a;
+    --blanco: #ffffff;
+    --gris-claro: #f4f4f4;
+    --texto: #333333;
+    
+    --sombra-suave: 0 0.625rem 1.25rem rgba(0,0,0,0.1); /* 10px 20px */
+    --sombra-hover: 0 0.9375rem 1.5625rem rgba(0,0,0,0.2); /* 15px 25px */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--texto);
+    width: 100%;                  
+    max-width: 75rem;            
+    margin: 0 auto;               
+    padding: 0 0.9375rem 3.125rem;         
+}
+
+/* --- 2. HEADER --- */
+.header-principal {
+    background: var(--blanco);
+    padding: 0.9375rem 5%;        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.05); /* 2px 10px */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container { display: flex; align-items: center; gap: 0.9375rem; }
+.logo-icon { font-size: 2.5rem; color: var(--verde-principal); }
+.logo-car-container { 
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    margin-right: 0.9375rem; 
+    cursor: pointer; 
+}
+
+.logo-car-icon { 
+    font-size: 1.8rem;
+    color: var(--sombra-suave); 
+}
+
+.contador-carrito { 
+    position: absolute; 
+    top: -0.9375rem;     
+    right: -0.75rem;  
+    background-color: var(--morado-oscuro); 
+    color: var(--blanco); 
+    font-size: 0.75rem; 
+    font-weight: bold;
+    min-width: 1.25rem;  
+    height: 1.25rem;     
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0.125rem;  
+}
+.logo-texto h1 { font-size: 1.2rem; color: var(--texto); line-height: 1; }
+.logo-texto span { font-size: 0.8rem; color: #666; }
+
+.menu { display: flex; align-items: center; gap: 0.625rem; /* 10px */ }
+.btn-menu {
+    text-decoration: none;
+    color: var(--texto);
+    padding: 0.5rem 1rem;         /* 8px 16px */
+    border-radius: 1.5625rem;     /* 25px */
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.btn-menu:hover { background-color: #eee; }
+.btn-menu.activo { background-color: var(--verde-principal); color: var(--blanco); }
+.btn-menu.destacado { border: 2px solid var(--morado-principal); color: var(--morado-principal); } /* Borde en px OK */
+
+/* --- 3. HERO SLIDER --- */
+.hero-slider {
+    width: 100%;
+    height: 25rem;                /* 400px */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.875rem;      /* 30px */
+}
+
+.slider-contenedor {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: moverCarrusel 12s infinite ease-in-out;
+}
+
+.slide { width: 33.333%; height: 100%; position: relative; }
+.slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
+
+.texto-slide {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; color: white;
+    width: 80%; z-index: 10;
+}
+.texto-slide h2 { 
+    font-size: 2.5rem; 
+    text-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.5); /* 2px 10px */
+}
+
+@keyframes moverCarrusel {
+    0%, 20% { margin-left: 0; }
+    33%, 53% { margin-left: -100%; }
+    66%, 86% { margin-left: -200%; }
+    100% { margin-left: 0; }
+}
+.slider-contenedor:hover { animation-play-state:running; }
+
+/* --- 4. ACCIONES RÁPIDAS --- */
+.acciones-container {
+    padding: 0 5%;
+    margin-top: -3.125rem;        /* -50px */
+    margin-bottom: 2.5rem;        /* 40px */
+    position: relative;
+    z-index: 20; 
+}
+
+.grid-acciones { display: flex; justify-content: center; gap: 1.25rem; /* 20px */ }
+
+.tarjeta {
+    flex: 1; height: 10rem;       /* 160px */
+    border-radius: 1.25rem;       /* 20px */
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--blanco);
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.tarjeta:hover { transform: translateY(-0.3125rem); /* -5px */ box-shadow: var(--sombra-hover); }
+.tarjeta .icono { font-size: 3rem; margin-bottom: 0.625rem; /* 10px */ }
+.tarjeta h3 { font-size: 1.1rem; font-weight: 700; }
+.tarjeta.verde { background: linear-gradient(135deg, var(--verde-principal), var(--verde-oscuro)); }
+.tarjeta.morado { background: linear-gradient(135deg, var(--morado-principal), var(--morado-oscuro)); }
+
+/* --- 5. BIENVENIDA --- */
+.bienvenida-container { padding: 0 5%; }
+.bienvenida-card {
+    background: var(--blanco);
+    border-radius: 1.25rem;       /* 20px */
+    overflow: hidden;
+    display: flex;
+    box-shadow: var(--sombra-suave); 
+    border: 1px solid #ddd;       /* Borde fino en px OK */
+}
+.bienvenida-card .texto { padding: 2.5rem; /* 40px */ flex: 1; }
+.bienvenida-card .imagen { flex: 1; }
+.bienvenida-card img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- 6. SERVICIOS --- */
+.grid-servicios {
+    display: grid;
+    /* minmax en rem asegura consistencia */
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px */
+    gap: 1.875rem;                /* 30px */
+}
+
+.card-servicio {
+    background: var(--blanco); padding: 1.875rem; /* 30px */
+    border-radius: 0.9375rem;     /* 15px */
+    text-align: center;
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0,0,0,0.05); /* 5px 15px */
+    transition: transform 0.3s ease;
+    border-bottom: 0.25rem solid var(--verde-principal); /* 4px */
+    cursor: pointer; 
+}
+.card-servicio:hover { transform: translateY(-0.625rem); /* -10px */ }
+.icono-servicio { font-size: 2.5rem; color: var(--morado-principal); margin-bottom: 1.25rem; /* 20px */ }
+.card-servicio h3 { margin-bottom: 0.9375rem; /* 15px */ color: var(--texto); }
+
+/* --- 7. GALERÍA OPTIMIZADA --- */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.9375rem; padding: 0.625rem; /* 15px, 10px */
+}
+.item-galeria {
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
+    border-radius: 0.9375rem;     /* 15px */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.1); /* 4px 6px */
+}
+.item-galeria img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; transition: transform 0.4s ease;
+    will-change: transform;
+}
+.item-galeria:hover img { transform: scale(1.1); filter: brightness(1.1); }
+
+/* ==========================================================================
+   8. TIENDA PRINCIPAL (VISTA GENERAL)
+   ========================================================================== */
+
+/* --- 8.1. Contenedores y Categorías --- */
+.categorias-tienda {
+    display: flex;
+    justify-content: center;
+    gap: 1.875rem;
+}
+
+.categoria-card {
+    width: 35%;
+    background-color: var(--blanco);
+    border-radius: 1.25rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+}
+
+.categoria-card img {
+    width: 100%;
+    border-radius: 0.9375rem;
+    margin-bottom: 15px;
+}
+
+/* --- 8.2. Grid de Productos (Catálogo) --- */
+.grid-productos {
+    display: none;
+}
+
+.grid-productos.activo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* --- 8.3. Tarjeta Individual de Producto --- */
+.producto-item {
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    box-shadow: var(--sombra-suave);
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.producto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+}
+
+.producto-img-container {
+    width: 100%;
+    height: 8rem;
+    background-color: var(--blanco);
+    padding: 1rem;
+}
+
+.producto-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.producto-info {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+
+.producto-info h4 {
+    color: var(--texto);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.producto-info .precio {
+    color: var(--verde-principal);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   9. MODALES Y VENTANAS EMERGENTES
+   ========================================================================== */
+
+/* --- 9.1. Estructura Base de Modal --- */
+.modal {
+    display: none;
+    /* Por defecto están ocultos */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+/* --- NUEVAS CLASES PARA ACTIVAR MODALES --- */
+.modal.activo {
+    display: block;
+    /* Solo se muestran cuando tienen la clase 'activo' */
+}
+
+/* El body necesita esta clase para bloquear el scroll cuando hay un modal abierto */
+body.modal-abierto {
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 56.25rem;
+    /* 900px */
+    border-radius: 1.25rem;
+    position: relative;
+    animation: aparecerModal 0.3s ease-out;
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(-3.125rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 0.9375rem;
+    right: 1.5625rem;
+    color: #aaa;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.cerrar-modal:hover {
+    color: #000;
+}
+
+/* --- 9.2. Modal General de Servicios --- */
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.25rem 0 0 1.25rem;
+    min-height: 18.75rem;
+}
+
+.modal-texto {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-texto h3 {
+    color: var(--verde-principal);
+    font-size: 1.8rem;
+    margin-bottom: 0.625rem;
+}
+
+.subtitulo-modal {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.lista-detalles {
+    list-style: none;
+    margin-bottom: 1.5625rem;
+}
+
+.lista-detalles li {
+    margin-bottom: 0.625rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+.nota-importante {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 0.9375rem;
+    border-radius: 0.625rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    border-left: 0.3125rem solid #ffeeba;
+}
+
+.btn-modal {
+    background-color: var(--morado-principal);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 3.125rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-modal:hover {
+    background-color: var(--morado-oscuro);
+}
+
+/* --- 9.3. Modal Específico de Producto --- */
+.producto-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.detalles-producto h3 {
+    font-size: 1.8rem;
+    color: var(--texto);
+    margin-bottom: 1rem;
+}
+
+.descripcion-prod {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Carrusel del Producto */
+.carrusel-producto {
+    position: relative;
+    width: 100%;
+    height: 18.75rem;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-prod {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slide-prod.activo {
+    display: block;
+}
+
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--verde-principal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.btn-carrusel:hover {
+    background-color: var(--verde-oscuro);
+}
+
+.btn-carrusel.prev {
+    left: 10px;
+}
+
+.btn-carrusel.next {
+    right: 10px;
+}
+
+/* Controles de Compra en el Modal */
+.controles-compra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gris-claro);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-cant {
+    background: white;
+    border: 1px solid #ccc;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-cant:hover {
+    background: #eee;
+}
+
+#cantidad-prod {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.precio-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--verde-principal);
+}
+
+.btn-agregar-carrito {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--morado-principal);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: var(--morado-oscuro);
+}
+
+/* ==========================================================================
+   10. CARRITO LATERAL (SLIDE-OUT)
+   ========================================================================== */
+.carrito-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25rem;
+    height: 100vh;
+    background-color: var(--blanco);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.carrito-lateral.activo {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.cerrar-carrito {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--sombra-suave);
+}
+
+.carrito-items {
+    flex-grow: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+/* --- Estilos internos de los items del carrito --- */
+.item-en-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.item-carrito-nombre {
+    margin: 0;
+    color: var(--morado-oscuro);
+    font-size: 0.9rem;
+}
+
+.item-carrito-controles {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.btn-cantidad-carrito {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-cantidad-carrito:hover {
+    background: #e0e0e0;
+}
+
+.item-carrito-cantidad {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.item-carrito-precio-unitario {
+    color: gray;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.item-carrito-acciones {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    /* 10px */
+}
+
+.item-carrito-total {
+    font-weight: bold;
+    color: var(--verde-principal);
+}
+
+.btn-eliminar-carrito {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-eliminar-carrito:hover {
+    color: #cc0000;
+    transform: scale(1.1);
+}
+
+.carrito-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--morado-oscuro);
+}
+
+.btn-pagar {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.overlay-carrito {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.overlay-carrito.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   11. MODAL DE CHECKOUT (FORMULARIO)
+   ========================================================================== */
+.modal-checkout-content {
+    max-width: 25rem;
+    padding: 2rem;
+}
+
+.titulo-checkout {
+    color: var(--verde-principal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.formulario-checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.input-form {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+.input-form:focus {
+    outline: none;
+    border-color: var(--verde-principal);
+}
+
+.oculto {
+    display: none !important;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--morado-principal);
+    color: var(--blanco);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--morado-oscuro);
+}
+
+/* ==========================================================================
+   12. MODAL DE ÉXITO FINAL
+   ========================================================================== */
+.modal-top {
+    z-index: 3000;
+}
+
+.modal-exito-content {
+    max-width: 25rem;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.icono-exito {
+    font-size: 4rem;
+    color: #25D366;
+    margin-bottom: 1rem;
+}
+
+.modal-exito-content h3 {
+    color: var(--texto);
+    margin-bottom: 1rem;
+}
+
+.modal-exito-content p {
+    color: gray;
+    line-height: 1.5;
+}
+
+.texto-ayuda-exito {
+    display: block;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 2rem;
+}
+
+
+/* ==========================================================================
+   13. ESTILOS GENERALES (UTILERÍA)
+   ========================================================================== */
+.seccion-general {
+    padding: 3.75rem 5%;
+}
+
+.fondo-gris {
+    background-color: #f9f9f9;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.titulo-seccion h2 {
+    font-size: 2rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 0.625rem;
+}
+
+
+/* ==========================================================================
+   14. MEDIA QUERIES UNIFICADAS
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Header */
+    .header-principal {
+        flex-direction: column;
+        gap: 0.9375rem;
+    }
+
+    .menu {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.3125rem;
+    }
+
+    .btn-menu {
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+
+    /* Hero y Acciones */
+    .hero-slider {
+        height: 15.625rem;
+    }
+
+    .texto-slide h2 {
+        font-size: 1.5rem;
+    }
+
+    .grid-acciones {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9375rem;
+    }
+
+    .tarjeta {
+        height: 7.5rem;
+    }
+
+    .tarjeta .icono {
+        font-size: 2rem;
+    }
+
+    .tarjeta h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Bienvenida */
+    .bienvenida-card {
+        flex-direction: column-reverse;
+    }
+
+    .bienvenida-card .imagen {
+        height: 12.5rem;
+    }
+
+    /* Modales Generales */
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-img img {
+        border-radius: 1.25rem 1.25rem 0 0;
+        height: 12.5rem;
+    }
+
+    .modal-texto {
+        padding: 1.5625rem;
+    }
+
+    .modal-content {
+        margin: 15% auto;
+        width: 95%;
+    }
+
+    /* Modal de Producto */
+    .producto-modal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+        gap: 1.5625rem;
+    }
+}
+
+/* VERSIÓN TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .grid-acciones,
+    .grid-servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}

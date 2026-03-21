@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Clínica Veterinaria San Francisco</title> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="logo-container">
+            <i class="fa-solid fa-paw logo-icon"></i> 
+            <div class="logo-texto">
+                <h1>San Francisco de Asís</h1>
+                <span>Clínica Veterinaria</span>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <a href="index.html" class="btn-menu">Inicio</a>
+            <a href="servicios.html" class="btn-menu activo">Servicios</a>
+            <a href="galeria.html" class="btn-menu">Galería</a>
+            <a href="tienda.html" class="btn-menu">Tienda</a>
+            <div class="logo-car-container">
+                <i class="fa-solid fa-cart-plus logo-car-icon"></i>
+                <span class="contador-carrito">0</span>
+            </div>
+            <a href="#" class="btn-menu destacado">Agendar Cita</a>
+        </nav>
+    </header>
+
+     <section id="servicios" class="seccion-general fondo-gris">
+        <div class="titulo-seccion">
+            <h2>Nuestros Servicios</h2>
+            <p>Todo lo que tu mascota necesita en un solo lugar</p>
+        </div>
+
+        <div class="grid-servicios">
+            <div class="card-servicio" onclick="abrirModal('modal-consulta')">
+                <i class="fa-solid fa-user-doctor icono-servicio"></i>
+                <h3>Consultas Generales</h3>
+                <p>Haz clic para ver qué incluye el chequeo completo.</p>
+            </div>
+
+            <div class="card-servicio" onclick="abrirModal('modal-domicilio')">
+                <i class="fa-solid fa-truck-medical icono-servicio"></i> 
+                <h3>Visitas a Domicilio</h3>
+                <p>Atención profesional en la comodidad de tu hogar.</p>
+            </div>
+
+            <div class="card-servicio">
+                <i class="fa-solid fa-scalpel icono-servicio"></i>
+                <h3>Cirugía Menor</h3>
+                <p>Esterilizaciones, limpieza dental y procedimientos ambulatorios seguros.</p>
+            </div>
+
+            <div class="card-servicio">
+                <i class="fa-solid fa-microscope icono-servicio"></i>
+                <h3>Laboratorio</h3>
+                <p>Toma de muestras y análisis rápidos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Clínica Veterinaria San Francisco de Asís - Ciudad Bolívar</p>
+    </footer>
+
+    <div id="modal-consulta" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal" onclick="cerrarModal('modal-consulta')">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-img">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Veterinaria revisando perro" loading="lazy">
+                </div>
+                <div class="modal-texto">
+                    <h3>Consulta General Integral</h3>
+                    <p class="subtitulo-modal">¿Qué incluye este servicio?</p>
+                    <p>Evaluamos los 12 puntos vitales de tu mascota:</p>
+                    <ul class="lista-detalles">
+                        <li>✅ Revisión cardíaca y pulmonar.</li>
+                        <li>✅ Control de peso y temperatura.</li>
+                        <li>✅ Revisión de oídos, ojos y dentadura.</li>
+                        <li>✅ Palpación abdominal.</li>
+                        <li>✅ Revisión de piel y pelaje.</li>
+                    </ul>
+                    <div class="nota-importante">
+                        <strong>Nota:</strong> Exámenes de laboratorio tienen costo adicional.
+                    </div>
+                    <a href="index.html#citas" class="btn-modal" onclick="cerrarModal('modal-consulta')">Agendar Esta Cita</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-domicilio" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal" onclick="cerrarModal('modal-domicilio')">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-img">
+                    <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=600&q=80" alt="Veterinaria en casa" loading="lazy">
+                </div>
+                <div class="modal-texto">
+                    <h3>Visita a Domicilio</h3>
+                    <p class="subtitulo-modal">La clínica va a tu casa</p>
+                    <p>Ideal para mascotas nerviosas o con poca movilidad.</p>
+                    <ul class="lista-detalles">
+                        <li>✅ Traslado de la doctora.</li>
+                        <li>✅ Revisión en ambiente seguro.</li>
+                        <li>✅ Tratamientos básicos in situ.</li>
+                    </ul>
+                    <div class="nota-importante">
+                        <strong>Ojo:</strong> Solo cubrimos zonas céntricas.
+                    </div>
+                    <a href="https://wa.me/58414XXXXXXX" class="btn-modal">Consultar Cobertura</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

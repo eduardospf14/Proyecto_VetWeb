@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria San Francisco</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="logo-container">
+            <i class="fa-solid fa-paw logo-icon"></i> 
+            <div class="logo-texto">
+                <h1>San Francisco de Asís</h1>
+                <span>Clínica Veterinaria</span>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <a href="index.html" class="btn-menu">Inicio</a>
+            <a href="servicios.html" class="btn-menu">Servicios</a>
+            <a href="galeria.html" class="btn-menu">Galería</a>
+            <a href="tienda.html" class="btn-menu activo">Tienda</a>
+            <div class="logo-car-container" id="btn-abrir-carrito">
+                <i class="fa-solid fa-cart-plus logo-car-icon"></i>
+                <span class="contador-carrito" id="contador">0</span>
+            </div>
+            <a href="#" class="btn-menu destacado">Agendar Cita</a>
+        </nav>
+    </header>
+
+    <section id="tienda" class="seccion-general fondo-gris">
+        <div class="titulo-seccion">
+            <h2>Tienda Veterinaria</h2>
+            <p>Contamos con los esenciales para tu consentido</p>
+        </div>
+
+        <div class="categorias-tienda">  
+            <div class="categoria-card" id="btn-farmacia">
+                <img src="./IMAGENES/Farmacia.png" alt="Farmacia Veterinaria">
+                <h3>Farmacia</h3>
+            </div>
+            
+            <div class="categoria-card" id="btn-accesorios">
+                <img src="./IMAGENES/Accesorios.png" alt="Accesorios para mascotas">
+                <h3>Accesorios</h3>
+            </div>
+        </div>
+        
+        <div class="grid-productos" id="seccion-farmacia">
+        </div>
+        
+        <div class="grid-productos" id="seccion-accesorios">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Clínica Veterinaria San Francisco de Asís - Ciudad Bolívar</p>
+    </footer>
+
+    <div id="modal-producto" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal" onclick="cerrarModal('modal-producto')">&times;</span>
+            <div class="producto-modal-grid">
+                <div class="carrusel-producto">
+                    <img src="https://iberofarmacos.net/wp-content/uploads/2024/09/MELOXICAM-IF-15MG-100-TABLETAS.jpg" id="imgPrincipalProd" class="slide-prod activo" alt="Meloxicam vista frontal">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=300&q=80" class="slide-prod" alt="Meloxicam vista trasera">
+                    <button class="btn-carrusel prev" onclick="cambiarImagen(-1)">&#10094;</button>
+                    <button class="btn-carrusel next" onclick="cambiarImagen(1)">&#10095;</button>
+                </div>
+                <div class="detalles-producto">
+                    <h3 id="nombreProd">Meloxicam 15mg</h3>
+                    <p id="descripcionProd" class="descripcion-prod">Antiinflamatorio no esteroideo indicado para el alivio de la inflamación y el dolor en perros. Ideal para el tratamiento de trastornos músculo-esqueléticos agudos y crónicos.</p>
+                    <div class="controles-compra">
+                        <div class="selector-cantidad">
+                            <button class="btn-cant" onclick="cambiarCantidad(-1)">-</button>
+                            <span id="cantidad-prod">1</span>
+                            <button class="btn-cant" onclick="cambiarCantidad(1)">+</button>
+                        </div>
+                        <div class="precio-total">
+                            Total: $<span id="total-prod">5.00</span>
+                        </div>
+                    </div>
+                    <button class="btn-agregar-carrito " onclick="agregarAlCarrito()">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carrito-lateral" class="carrito-lateral">
+        <div class="carrito-header">
+            <h2>Tu Cesta</h2>
+            <span class="cerrar-carrito" id="btn-cerrar-carrito">&times;</span>
+        </div>
+        <div id="contenedor-items-carrito" class="carrito-items">
+            <p style="text-align: center; color: gray; margin-top: 2rem;">El carrito está vacío</p>
+        </div>
+        <div class="carrito-footer">
+            <div class="carrito-total">
+                <h3>Total:</h3>
+                <h3>$<span id="gran-total-carrito">0.00</span></h3>
+            </div>
+            <button class="btn-pagar" id="btn-pagar">Proceder al Pago</button>
+        </div>
+    </div>
+    <div id="overlay-carrito" class="overlay-carrito"></div>
+
+    <div id="modal-checkout" class="modal">
+        <div class="modal-content modal-checkout-content">
+            <span class="cerrar-modal" id="btn-cerrar-checkout">&times;</span>
+            <h3 class="titulo-checkout">Finalizar Pedido</h3>
+    
+            <div class="formulario-checkout">
+                <div class="form-group">
+                    <label>Nombre y Apellido</label>
+                    <input type="text" id="input-nombre" placeholder="Ej. Juan Pérez" class="input-form">
+                </div>
+    
+                <div class="form-group">
+                    <label>Método de Entrega</label>
+                    <select id="select-entrega" class="input-form">
+                        <option value="recojo">Recojo en Tienda</option>
+                        <option value="delivery">Delivery</option>
+                    </select>
+                </div>
+    
+                <div id="caja-direccion" class="form-group oculto">
+                    <label>Dirección de Delivery</label>
+                    <input type="text" id="input-direccion" placeholder="Ej. Calle Las Flores 123" class="input-form">
+                </div>
+    
+                <div class="form-group">
+                    <label>Método de Pago</label>
+                    <select id="select-pago" class="input-form">
+                        <option value="Transferencia/Bs">Transferencia / Bs</option>
+                        <option value="Binance">Binance</option>
+                        <option value="Divisas en efectivo">Divisas en efectivo</option>
+                    </select>
+                </div>
+    
+                <button id="btn-enviar-pedido" class="btn-whatsapp">
+                    Enviar por WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-exito" class="modal modal-top">
+        <div class="modal-content modal-exito-content">
+            <i class="fa-brands fa-whatsapp icono-exito"></i>
+            <h3>¡Casi listo!</h3>
+            <p>Será redireccionado a WhatsApp para finalizar la compra.</p>
+            <span class="texto-ayuda-exito">(Haz clic en cualquier lugar para volver a la tienda)</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
