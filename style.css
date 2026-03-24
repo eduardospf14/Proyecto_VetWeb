@@ -862,16 +862,19 @@ body.modal-abierto {
    ========================================================================== */
 @media (max-width: 768px) {
 
-    /* Header */
     .header-principal {
         flex-direction: column;
         gap: 0.9375rem;
     }
-
+    
     .menu {
         width: 100%;
         overflow-x: auto;
-        padding-bottom: 0.3125rem;
+        padding-top: 1.2rem;
+        padding-right: 1.2rem;
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
     }
 
     .btn-menu {
@@ -879,7 +882,6 @@ body.modal-abierto {
         font-size: 0.9rem;
     }
 
-    /* Hero y Acciones */
     .hero-slider {
         height: 15.625rem;
     }
@@ -906,7 +908,6 @@ body.modal-abierto {
         font-size: 0.9rem;
     }
 
-    /* Bienvenida */
     .bienvenida-card {
         flex-direction: column-reverse;
     }
@@ -914,6 +915,39 @@ body.modal-abierto {
     .bienvenida-card .imagen {
         height: 12.5rem;
     }
+
+    .categorias-tienda {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .categoria-card {
+        width: 80%;
+    }
+
+    .grid-productos.activo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .producto-img-container {
+        height: 6rem;
+    }
+
+    .producto-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .producto-info .precio {
+        font-size: 1rem;
+    }
+
+    .carrito-lateral {
+        width: 100%;
+    }
+
+    /* ================================================================== */
 
     /* Modales Generales */
     .modal-grid {
@@ -934,16 +968,14 @@ body.modal-abierto {
         width: 95%;
     }
 
-    /* Modal de Producto */
     .producto-modal-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
     }
-}
 
-@media (min-width: 768px) {
-    .grid-galeria {
-        grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
-        gap: 1.5625rem;
+    .carrusel-producto {
+        height: 12rem;
     }
 }
 
@@ -953,6 +985,10 @@ body.modal-abierto {
     .grid-acciones,
     .grid-servicios {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-productos.activo {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     h2 {

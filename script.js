@@ -28,6 +28,8 @@ let cantidadActual = 1;
 let precioBaseActual = 0;
 let nombreActual = "";
 let carrito = [];
+let imagenesProductos = [];
+let indiceImagen = 0;
 
 
 const btnFarmacia = document.getElementById('btn-farmacia');
@@ -54,6 +56,8 @@ function abrirModalProducto(nombre, precio, descripcion, arrayFotos) {
     cantidadActual = 1;
     precioBaseActual = precio;
     nombreActual = nombre;
+    imagenesProductos = arrayFotos;
+    indiceImagen = 0;
     const nombreProd = document.getElementById('nombreProd');
     const descripcionProd = document.getElementById('descripcionProd');
     const precioProd = document.getElementById('total-prod');
@@ -208,4 +212,15 @@ function modificarCantidadCarrito(nombre, cambio) {
         actualizarContadorCarrito();
         renderizarCarrito();
     }
+}
+
+function cambiarImagen(cambio) {
+    indiceImagen += cambio;
+    if (indiceImagen < 0) {
+        indiceImagen = imagenesProductos.length -1;
+    } else if (indiceImagen >= imagenesProductos.length) {
+        indiceImagen = 0;
+    }
+    const imagenActual = document.getElementById("imgPrincipalProd");
+    imagenActual.src = imagenesProductos[indiceImagen];
 }

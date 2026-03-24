@@ -5,9 +5,8 @@
     "nombre": "Meloxicam 15mg",
     "precio": 5.00,
     "descripcion": "Antiinflamatorio no esteroideo indicado para el alivio de la inflamación y el dolor en perros. Ideal para el tratamiento de trastornos músculo-esqueléticos agudos y crónicos.",
-    "imagenes": [
-      "https://iberofarmacos.net/wp-content/uploads/2024/09/MELOXICAM-IF-15MG-100-TABLETAS.jpg",
-      "https://www.acromax.com.do/wp-content/uploads/2022/10/INSERTO-MELOXICAM-15-MG-scaled.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia1.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia1-2.JPG"
     ]
   },
   {
@@ -16,9 +15,8 @@
     "nombre": "Enrofloxacina 50mg",
     "precio": 3.00,
     "descripcion": "Antibiótico de amplio espectro (Fluoroquinolona). Tratamiento de infecciones bacterianas en piel, sistemas urinario, respiratorio y digestivo.",
-    "imagenes": [
-      "https://www.superpet.pe/on/demandware.static/-/Sites-SuperPet-master-catalog/default/dwd23af019/images/dragpharma-rostrum-enrofloxacina-50-mg-caja-x-10-tabletas-1113331.jpg",
-      "https://cdn.shopify.com/s/files/1/0550/9998/2004/products/enrofloxacina-50mg-pastillas.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia2.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia2-2.JPG"
     ]
   },
   {
@@ -27,9 +25,8 @@
     "nombre": "Ivermectina 200ml",
     "precio": 20.00,
     "descripcion": "Antiparasitario de amplio espectro. Indicado para el control y tratamiento de parásitos internos y externos en diversas especies animales.",
-    "imagenes": [
-      "https://www.laboratorioserma.com/wp-content/uploads/2023/11/P-Web-Ivermectina-200.jpg",
-      "https://veterinariadtaisa.com.pe/wp-content/uploads/2021/04/IVERMECTINA-200.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia3.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia3-2.JPG"
     ]
   },
   {
@@ -38,9 +35,8 @@
     "nombre": "Prednisolona 20mg",
     "precio": 5.00,
     "descripcion": "Glucocorticoide con potente acción antiinflamatoria y antialérgica. Recomendado para el tratamiento de procesos inflamatorios y afecciones de la piel.",
-    "imagenes": [
-      "https://www.superpet.pe/on/demandware.static/-/Sites-SuperPet-master-catalog/default/dw75d7e7dc/images/holliday-prednisolona-antiflamatorio-x-blister-10.jpg",
-      "https://exitoveterinario.com/wp-content/uploads/2020/06/prednisolona-20mg.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia4.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia4-2.JPG"
     ]
   },
   {
@@ -49,9 +45,8 @@
     "nombre": "Ranitidina 50ml",
     "precio": 13.00,
     "descripcion": "Antagonista H2 indicado para la reducción de la secreción de ácido gástrico. Útil en el tratamiento y prevención de úlceras gástricas y gastritis aguda.",
-    "imagenes": [
-      "https://vetmarketportal.com.ar/uploads/ckeditor/2022/09/20220909101646_vetanco_3.jpg",
-      "https://i0.wp.com/pueblavet.com/wp-content/uploads/2020/08/ranitidina-inyectable.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia5.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia5-2.JPG"
     ]
   },
   {
@@ -60,9 +55,8 @@
     "nombre": "Maropitant 20ml",
     "precio": 60.00,
     "descripcion": "Antiemético eficaz para la prevención y el tratamiento del vómito. Ideal para el manejo de náuseas causadas por viajes (cinetosis) o procesos post-operatorios.",
-    "imagenes": [
-      "https://www.laboratorioserma.com/wp-content/uploads/2025/03/P-Web-Maropitant-20.jpg",
-      "https://www.zoetis.mx/_locale-assets/mcm-portal-assets/publish/products/cerenia-maropitant.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia6.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia6-2.JPG"
     ]
   },
   {
@@ -71,9 +65,8 @@
     "nombre": "Solupam 5 mg/ml",
     "precio": 20.00,
     "descripcion": "Sedante y tranquilizante de acción rápida derivado de las benzodiazepinas. Utilizado frecuentemente como pre-anestésico o para el control de episodios convulsivos.",
-    "imagenes": [
-      "https://www.albet.es/cdnassets/solupam-ES-IT-PT-10_ml-5_mgml_l.jpg",
-      "https://vet-es.virbac.com/files/live/sites/virbac-es/files/product-item/solupam-bottles.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia7.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia7-2.JPG"
     ]
   },
   {
@@ -82,9 +75,8 @@
     "nombre": "Clorhexidina en Spray 100 ML",
     "precio": 14.00,
     "descripcion": "Antiséptico de uso tópico con acción bactericida. Indicado para la limpieza de heridas superficiales, desinfección de la piel y prevención de infecciones cutáneas.",
-    "imagenes": [
-      "https://www.veterinariadtaisa.com.pe/wp-content/uploads/2025/05/F00031.jpg",
-      "https://http2.mlstatic.com/D_NQ_NP_960585-MLM44365742211_122020-O.jpg"
+    "imagenes": ["./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia8.JPG",
+      "./IMAGENES/PRODUCTOS/FARMACIA/productofarmacia8-2.JPG"
     ]
   },
   {
@@ -93,9 +85,8 @@
     "nombre": "Collar de Nylon Ajustable",
     "precio": 8.50,
     "descripcion": "Collar resistente y suave al tacto con broche de seguridad reforzado. Disponible en varios colores y tallas para adaptarse al cuello de tu mascota sin causar irritación.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/4780301219441624387_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/4780301219441624387_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios1.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios1-2.JPG"
     ]
   },
   {
@@ -104,9 +95,8 @@
     "nombre": "Correa Extensible 5 Metros",
     "precio": 18.00,
     "descripcion": "Correa retráctil automática que ofrece libertad de movimiento y control total. Incluye sistema de frenado rápido y mango ergonómico antideslizante.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/7365156561317552291_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/7365156561317552291_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios2.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios2-2.JPG"
     ]
   },
   {
@@ -115,9 +105,8 @@
     "nombre": "Comedero de Acero Inoxidable",
     "precio": 12.00,
     "descripcion": "Plato duradero, higiénico y fácil de lavar. Cuenta con base de goma antideslizante para evitar ruidos y derrames durante la alimentación.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/10397071173302141157_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/10397071173302141157_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios3.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios3-2.JPG"
     ]
   },
   {
@@ -126,9 +115,8 @@
     "nombre": "Arnés Ergonómico Antitirones",
     "precio": 25.00,
     "descripcion": "Diseño acolchado que distribuye la presión uniformemente en el pecho para evitar asfixia. Ideal para caminatas seguras y entrenamiento diario.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/13612747317016436651_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/13612747317016436651_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios4.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios4-2.JPG"
     ]
   },
   {
@@ -137,9 +125,8 @@
     "nombre": "Cama Ortopédica Relajante",
     "precio": 45.00,
     "descripcion": "Cama con espuma de memoria que alivia puntos de presión. Funda lavable y base impermeable, perfecta para mascotas de todas las edades.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/15297233411192426092_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/15297233411192426092_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios5.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios5-2.JPG"
     ]
   },
   {
@@ -148,9 +135,8 @@
     "nombre": "Transportadora Rígida de Viaje",
     "precio": 55.00,
     "descripcion": "Caja de transporte con ventilación óptima y puerta metálica de seguridad. Cumple con las normativas para viajes en avión y transporte terrestre.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/9729534295620587666_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/9729534295620587666_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios6.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios6-2.JPG"
     ]
   },
   {
@@ -159,9 +145,8 @@
     "nombre": "Cepillo Cardina Desenredante",
     "precio": 10.00,
     "descripcion": "Herramienta esencial para eliminar el pelo muerto y prevenir nudos. Cerdas suaves de acero que masajean la piel sin lastimar.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/631073685397162539_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/631073685397162539_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios7.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios7-2.JPG"
     ]
   },
   {
@@ -170,9 +155,8 @@
     "nombre": "Juguete de Caucho Natural",
     "precio": 9.50,
     "descripcion": "Masticable extra resistente diseñado para la salud dental. Ayuda a reducir el estrés y la ansiedad mientras limpia los dientes de tu mascota.",
-    "imagenes": [
-      "http://googleusercontent.com/image_collection/image_retrieval/8224557172436436928_0",
-      "http://googleusercontent.com/image_collection/image_retrieval/8224557172436436928_1"
+    "imagenes": ["./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios8.JPG",
+      "./IMAGENES/PRODUCTOS/ACCESORIOS/productoaccesorios8-2.JPG"
     ]
   }
 ]
