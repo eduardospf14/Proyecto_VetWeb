@@ -77,8 +77,6 @@ function cargarProductos() {
     fetch('productos.json')
         .then(respuesta => respuesta.json())
         .then(productos => {           
-            const farmaciaSeccion = document.getElementById('seccion-farmacia');
-            const accesoriosSeccion = document.getElementById('seccion-accesorios');
             productos.forEach(producto => { 
                 const plantillaHtml= 
                     `<div class="producto-item" onclick="abrirModalProducto('${producto.nombre}', ${producto.precio}, '${producto.descripcion}', ['${producto.imagenes[0]}', '${producto.imagenes[1]}'])">
@@ -91,10 +89,10 @@ function cargarProductos() {
                     </div>
                     </div>`;
                 if(producto.categoria === "farmacia") {
-                    farmaciaSeccion.innerHTML += plantillaHtml;
+                    seccionFarmacia.innerHTML += plantillaHtml;
                     
                 } else {
-                    accesoriosSeccion.innerHTML += plantillaHtml;                    
+                    seccionAccesorios.innerHTML += plantillaHtml;                    
                 }
             })
         })
@@ -223,4 +221,73 @@ function cambiarImagen(cambio) {
     }
     const imagenActual = document.getElementById("imgPrincipalProd");
     imagenActual.src = imagenesProductos[indiceImagen];
+}
+
+const btnpagar = document.getElementById('btn-pagar');
+const modalCheckout = document.getElementById('modal-checkout');
+const btnCerrarCheckout = document.getElementById('btn-cerrar-checkout');
+
+if (btnpagar) {
+    btnpagar.addEventListener('click', function() {
+        if (carrito.length === 0) {
+        alert("El carrito está vacío");
+        return;
+        }
+        modalCheckout.classList.add('activo');
+        carritoLateral.classList.remove('activo');
+        document.body.classList.add('modal-abierto');
+    });
+}
+
+if (btnCerrarCheckout) {
+    btnCerrarCheckout.addEventListener('click', function() {
+        modalCheckout.classList.remove('activo');      
+        document.body.classList.remove('modal-abierto');        
+        overlayCarrito.classList.remove('activo');
+    });
+}
+
+const selectentrega = document.getElementById("select-entrega");
+const cajadireccion = document.getElementById("caja-direccion");
+
+if (selectentrega) {
+    selectentrega.addEventListener("change", opcion => {
+        let selectopcion = opcion.target.value;
+        if ( selectopcion === "delivery") {
+            cajadireccion.classList.remove('oculto');
+        }
+        else if ( selectopcion === "recojo") {
+            cajadireccion.classList.add('oculto');
+        }
+    })
+}
+
+const btnEnviarPedido = document.getElementById('btn-enviar-pedido');
+const modalExito = document.getElementById('modal-exito');
+
+if (btnEnviarPedido) {
+    btnEnviarPedido.addEventListener('click', function() {
+        const inputNombre = document.getElementById('input-nombre').value;
+        const campoDireccion = document.getElementById('caja-direccion');
+        const inputDireccion = document.getElementById('input-direccion').value;
+        if (inputNombre.trim() === "") {
+            alert("Por favor, ingrese su nombre para proceder con el pedido.");
+            return;
+        } else if (!campoDireccion.classList.contains("oculto") && inputDireccion.trim() === "" ) {
+            alert("Por favor, ingrese su dirección para proceder con el pedido.");
+            return;
+        }
+        modalCheckout.classList.remove('activo');
+        modalExito.classList.add('activo');
+    });
+}
+
+if (modalExito) {
+    modalExito.addEventListener('click', function() {
+        modalExito.classList.remove('activo');
+        document.body.classList.remove('modal-abierto');
+        carrito = [];
+        actualizarContadorCarrito();
+        renderizarCarrito();
+    });
 }
