@@ -8,8 +8,8 @@
     --gris-claro: #f4f4f4;
     --texto: #333333;
     
-    --sombra-suave: 0 0.625rem 1.25rem rgba(0,0,0,0.1); /* 10px 20px */
-    --sombra-hover: 0 0.9375rem 1.5625rem rgba(0,0,0,0.2); /* 15px 25px */
+    --sombra-suave: 0 0.625rem 1.25rem rgba(0,0,0,0.1); 
+    --sombra-hover: 0 0.9375rem 1.5625rem rgba(0,0,0,0.2);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

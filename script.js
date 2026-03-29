@@ -114,7 +114,7 @@ function cambiarCantidad(cambio) {
 }
 
 function agregarAlCarrito() {
-    let nuevoArticulo = {
+    const nuevoArticulo = {
         nombre : nombreActual,
         cantidad : cantidadActual,
         precioUnitario : precioBaseActual,
@@ -284,10 +284,6 @@ if (btnEnviarPedido) {
 
 if (modalExito) {
     modalExito.addEventListener('click', function() {
-        modalExito.classList.remove('activo');
-        document.body.classList.remove('modal-abierto');
-        carrito = [];
-        actualizarContadorCarrito();
-        renderizarCarrito();
+        window.location.reload();
     });
 }
